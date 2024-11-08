@@ -74,14 +74,14 @@ export default function PostForm({ post }) {
         <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
             <div className="w-2/3 px-2">
                 <Input
-                    label="Tittle :"
+                    label="Title :"
                     placeholder="Tittle"
                     className="mb-4"
-                    {...register("title", { required: true })}
+                    {...register("Tittle", { required: true })}
                 />
                 <Input
-                    label="Slug :"
-                    placeholder="Slug"
+                    label="slug :"
+                    placeholder="slug"
                     className="mb-4"
                     {...register("slug", { required: true })}
                     onInput={(e) => {
@@ -96,13 +96,13 @@ export default function PostForm({ post }) {
                     type="file"
                     className="mb-4"
                     accept="image/png, image/jpg, image/jpeg, image/gif"
-                    {...register("image", { required: !post })}
+                    {...register("featuredImage	", { required: !post })}
                 />
                 {post && (
                     <div className="w-full mb-4">
                         <img
                             src={appwriteService.getFilePreview(post.featuredImage)}
-                            alt={post.title}
+                            alt={post.Tittle}
                             className="rounded-lg"
                         />
                     </div>
